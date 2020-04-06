@@ -1,2 +1,3 @@
-# Google-Play-Store-Download-Prediction
-Google Play Store App Data EDA
+# Google-Play-Store-Download-Analysis
+
+Google Play Store EDA
