@@ -11,7 +11,7 @@ Zachary Villarreal
 1. [Background](#Background)
 2. [Data](#Data)
 3. [Analysis](#Analysis)
-4. [Hypothesis Testing](#Hypothesis Testing)
+4. [Hypothesis_Testing](#Hypothesis_Testing)
 5. [Conclusion](#Conclusion)
 
 
