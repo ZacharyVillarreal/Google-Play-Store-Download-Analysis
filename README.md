@@ -10,6 +10,7 @@ Zachary Villarreal
 
 
 ## Table of Contents
+<<<<<<< HEAD
 * [Background](#Background)
     * [Project Description](#Project-Description)
     * [Motivation](#Motivation)
@@ -24,6 +25,14 @@ Zachary Villarreal
 * [Hypothesis Testing](#Hypothesis-Testing)
     * [Preparation](#Preparation)
 * [Conclusion](#Conclusion)
+=======
+-------------------------
+1. [Background](#Background)
+2. [Data](#Data)
+3. [Analysis](#Analysis)
+4. [Hypothesis_Testing](#Hypothesis_Testing)
+5. [Conclusion](#Conclusion)
+>>>>>>> 9595bcaed829afee9fe04dda03c95d13aaeef012
 
 
 <a name="background"></a>
