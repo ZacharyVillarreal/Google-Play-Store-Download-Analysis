@@ -23,10 +23,12 @@ Zachary Villarreal
     * [Other Factors of Success](#Other-Factors-of-Success)
 * [Hypothesis Testing](#Hypothesis-Testing)
     * [Preparation](#Preparation)
-    * [Welch's T-Test](#Welch's-T-Test)
+    * [Kruskal-Wallis H-Test](#Kruskal-Wallis-H-Test)
     * [Further Analysis](#Further-Analysis)
+* [Second Hypothesis Testing](#Second-Hypothesis-Testing)
+    * [Preparation (Categories)](#Preparation-(Categories))
+    * [Kruskal-Wallis H-Test (Categories)](#Kruskal-Wallis-H-Test-(Categories))
 * [Conclusion](#Conclusion)
-    * [Next Steps](#Next-Steps)
 
 
 
@@ -184,56 +186,32 @@ My null hypothesis states that there is no difference in the mean ratings betwee
 $$ H_0: \ Rating_{HighInstalls} \mu  =  Rating_{LowInstalls}\mu $$
 $$ H_a: \ Rating_{HighInstalls} \mu  \neq  Rating_{LowInstalls}\mu $$
 
-### Welch's T-Test
+### Kruskal-Wallis H-Test
 ---
-To calculate the p values for my hypothesis, and because the distribution of ratings was normally distributed,  I used the [Welch's T-Test](#https://en.wikipedia.org/wiki/Welch's_t-test) to test the difference in population means.
+To calculate the p values for my hypothesis, and because I want to compare nonparametric data over multiple levels,  I used the [Kruskal-Wallis H Test](#https://en.wikipedia.org/wiki/Kruskal%E2%80%93Wallis_one-way_analysis_of_variance)to test the difference in population means.
 
-In order to select which levels of installs to compare the mean of their respective rating, I need to pick the levels that contain the closest sample size. These were the pairs I chose to run Welch's t-test with<br>
+In order to select which levels of installs to compare the mean of their respective rating, I need to pick the levels that contain the largest sample sizes. I then grouped each install level by rating, equating the proportion of each rating, and ensuring that the final sample size of each level was equal. These were the pairs I chose to run Kruskal-Wallis' H-test with<br>
 
 | Install Level | Sample Size |
 | ------------- | ----------- |
+| 500           | 13,528      |
+|1,000          | 47,233      |
+|5,000          | 25,304      |
+|10,000         | 57,630      |
 | 50,000        | 21,414      |
 |100,000        | 34,665      |
 
-
 <p align='center'>
-<img src="graphs/Distribution_of_Ratings_50k_100k.png" width="700" height="420"> 
+<img src="graphs/Distribution_of_Ratings_Over_Install_Level.png" width="900" height="600"> 
 </p>
 
-| Install Level | Sample Size |
-| ------------- | ----------- |
-| 10,000        | 57,630      |
-|50,000         | 21,414      |
+In the Kruskal-Wallis test above, it was calculated that the `p-value = 3.37e-09`, which you can find in the [Hypothesis Testing Notebook](src/Hypothesis_Testing.ipynb). This means that I can successfully reject the *null* hypothesis, with a preset $\alpha$ value of **0.05**, signifying that there is a statistical difference between the ratings mean across the different levels of installs.
 
-<p align='center'>
-<img src="graphs/Distribution_of_Ratings_10k_50k.png" width="700" height="420"> 
-</p>
-
-| Install Level | Sample Size |
-| ------------- | ----------- |
-| 10,000        | 57,630      |
-|100,000         | 34,665     |
-
-<p align='center'>
-<img src="graphs/Distribution_of_Ratings_10k_100k.png" width="700" height="420"> 
-</p>
-
-As we can see in the 3 cases above, we fail to reject the null hypothesis since our p-values are greater than our pre-set $\alpha $ = 0.05. This is interesting, because I initially believed that the level of installs, for which an application lies, would have some affect on the rating's distribution. However, I only specifically tested those levels where we found the majority of applications to exist, 10,000. Let's see how the distribution behaves below the majority. 
-
-| Install Level | Sample Size |
-| ------------- | ----------- |
-| 1,000         |  47,233     |
-|10,000         | 57,630      |
-
-<p align='center'>
-<img src="graphs/Distribution_of_Ratings_1k_10k.png" width="700" height="420"> 
-</p>
-
-Wow! It seems that the ratings distribution has changed drastically between the 10,000 level and the 1,000 level of installs. The distribution is no longer normal and thus can no longer be calculated with Welch's t-test. I know am curious as to what is truly occurring in the plot above. Let's explore this further.
+However, there seems to be an interesting caveat to these distributions! It seems that the ratings distribution has changed drastically between the 10,000 level and the 1,000 level of installs. The distribution is no longer centered around a rating of 4.4-4.5, and is heavily skewed towards a rating of 5.0. Let's explore this further.
 
 <a href="#Table-of-Contents">Back to top</a>
 
-### Further Analysis
+### Post-Hoc Analysis 
 
 As discussed in the section above, the behavior of rating distribution is changed once the level of installs is below 10,000. But why is that? To begin this next stage of analysis, I need to look into the factors that I believe to be affecting it. 
 
@@ -277,10 +255,11 @@ My null hypothesis is that there is no difference in the mean rating between the
 $$ H_0: \ GAME_{Rating} \mu  =  VIDEOPLAYERS_{Rating} \mu = COMMUNICATION_{Rating} \mu = PHOTOGRAPHY_{Rating} \mu = SOCIAL_{Rating} \mu = TOOLS_{Rating}\mu $$
 $$ H_a: \ GAME_{Rating} \mu  \neq  VIDEOPLAYERS_{Rating} \mu \neq COMMUNICATION_{Rating} \mu \neq PHOTOGRAPHY_{Rating} \mu \neq SOCIAL_{Rating} \mu \neq TOOLS_{Rating}\mu $$
 
+### Kruskal-Wallis H-Test Categories
 To calculate the p-value for my hypothesis testing, I used the [Kruskal-Wallis H Test](#https://en.wikipedia.org/wiki/Kruskal%E2%80%93Wallis_one-way_analysis_of_variance), or one-way ANOVA on ranks. This test specifically for nonparametric data that analyzes whether samples originate from the sample distribution, which means it tests to see if there's a difference in means. As we saw in the hypothesis testing above, our data, which we thought was normally distributed, ended up being nonparametric. To combat this issue, I used H-Test. 
 
 <p align='center'>
-<img src="graphs/Distribution_of_Ratings_Over_Top_Categories.png" width="700" height="420"> 
+<img src="graphs/Distribution_of_Ratings_Over_Top_Categories.png" width="900" height="600"> 
 </p>
 
 In the Kruskal-Wallis test above, it was calculated that the `p-value = 0.0104`, which you can find at the bottom of the [Hypothesis Testing Notebook](src/Hypothesis_Testing.ipynb). This means that I can successfully reject the *null* hypothesis, with a preset $\alpha$ value of **0.05**, signifying that there is a statistical difference between the ratings mean across the categories.
