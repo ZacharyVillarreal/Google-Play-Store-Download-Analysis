@@ -158,7 +158,7 @@ An application with a high rating, i.e. rating from `4.0 to 5.0`, could also be 
 The distribution of Ratings over the application count is centered around 4.5, with an outlier at 5.0. One of the problems I ran into while cleaning my data was that there were a large number of applications that had a rating of 5.0, while their number of reviews was small, `n < 100`. This outlier proved to be a problem that needed to be solved, how are the higher rated applications throwing off the distribution of ratings over *all* applications. I wanted to take a look at the number of installs per application rating to see if this solved my problem.
 
 <p align='center'>
-<img src="graphs/Number_of_Apps_per_Rating.png" width="700" height="420"> 
+<img src="graphs/Number_of_Installs_per_Rating.png" width="700" height="420"> 
 </p>
 
 By my previous claim, the outlier from the previous graph seemed to disappear. This was because the total number of installs for applications with a rating of 5.0, `n = 9,756,878`, was significantly less than the number of installs for applications in which this distribution is centered around, 4.4-4.5, `n = 16,005,839,635`. This is going against my initial assumption that install size will affect overall rating. 
