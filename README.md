@@ -2,7 +2,7 @@
 <img src="images/google-play-logo1.jpg" width="400" height="300"> 
 </p>
 
-# Does the Level of Application Installs Affect Its Ratings
+# What Makes an Application Successful
 
 
 
