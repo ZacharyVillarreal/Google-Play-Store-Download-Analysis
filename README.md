@@ -272,18 +272,18 @@ For my second hypothesis testing, since we are studying the success factors of a
 
 `game_rating = play_store_data[play_store_data['Category'] == 'GAME']`
 
-My null hypothesis is that there is no difference in the mean rating between  the categories tested. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in mean rating per category of application. (See mathematical representation of these hypotheses below).
+My null hypothesis is that there is no difference in the mean rating between the categories tested. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in mean rating per category of application. (See mathematical representation of these hypotheses below).
 
 $$ H_0: \ GAME_{Rating} \mu  =  VIDEOPLAYERS_{Rating} \mu = COMMUNICATION_{Rating} \mu = PHOTOGRAPHY_{Rating} \mu = SOCIAL_{Rating} \mu = TOOLS_{Rating}\mu $$
 $$ H_a: \ GAME_{Rating} \mu  \neq  VIDEOPLAYERS_{Rating} \mu \neq COMMUNICATION_{Rating} \mu \neq PHOTOGRAPHY_{Rating} \mu \neq SOCIAL_{Rating} \mu \neq TOOLS_{Rating}\mu $$
 
-In order to calculate the p-value for my hypothesis testing, I used the one-way Analysis of Variance, [ANOVA](#https://en.wikipedia.org/wiki/Analysis_of_variance), which is considered a robust test against the normality assumption. Meaning, that it tolerates violations to its normality assumption rather well, which the distribution of ratings in the dataset seems to portray.
+To calculate the p-value for my hypothesis testing, I used the [Kruskal-Wallis H Test](#https://en.wikipedia.org/wiki/Kruskal%E2%80%93Wallis_one-way_analysis_of_variance), or one-way ANOVA on ranks. This test specifically for nonparametric data that analyzes whether samples originate from the sample distribution, which means it tests to see if there's a difference in means. As we saw in the hypothesis testing above, our data, which we thought was normally distributed, ended up being nonparametric. To combat this issue, I used H-Test. 
 
 <p align='center'>
 <img src="graphs/Distribution_of_Ratings_Over_Top_Categories.png" width="700" height="420"> 
 </p>
 
-In the one-way ANOVA test above, it was calculated that the `p-value = 0.046` which means that I can successfully reject the *null* hypothesis, with a preset $\alpha$ value of **0.05**, signifying that there is a statistical difference between the ratings mean across the categories.
+In the Kruskal-Wallis test above, it was calculated that the `p-value = 0.0104`, which you can find at the bottom of the [Hypothesis Testing Notebook](src/Hypothesis_Testing.ipynb). This means that I can successfully reject the *null* hypothesis, with a preset $\alpha$ value of **0.05**, signifying that there is a statistical difference between the ratings mean across the categories.
 
 
 <a href="#Table-of-Contents">Back to top</a>
