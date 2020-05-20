@@ -181,10 +181,10 @@ This is worthy of further investigation, time to test if my hypothesis is correc
 In order for my to run a hypothesis test on the impact the level of installs an application has on its distribution of ratings, I needed to split up the data into the specific levels of installs that showed the highest count of the number of applications. I did this using list iteration to query into the pandas data frame, as shown below. 
 `downloads_100 = play_store_data[play_store_data['Installs'] == 10000]`
 
-My null hypothesis states that there is no difference in the mean ratings between a higher level of installs and a lower level of installs. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in mean ratings per level of installs. (See mathematical representation of these hypotheses below).
+My null hypothesis states that there is no difference in the ratings' median between a higher level of installs and a lower level of installs. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in the ratings' median per level of installs. (See mathematical representation of these hypotheses below).
 
-$$ H_0: \ Rating_{HighInstalls} \mu  =  Rating_{LowInstalls}\mu $$
-$$ H_a: \ Rating_{HighInstalls} \mu  \neq  Rating_{LowInstalls}\mu $$
+$$ H_0: \ Rating_{HighInstalls} \tilde x  =  Rating_{LowInstalls}\tilde x $$
+$$ H_a: \ Rating_{HighInstalls} \tilde x  \neq  Rating_{LowInstalls}\tilde x $$
 
 ### Kruskal-Wallis H-Test
 ---
@@ -250,10 +250,10 @@ For my second hypothesis testing, since we are studying the success factors of a
 
 `game_rating = play_store_data[play_store_data['Category'] == 'GAME']`
 
-My null hypothesis is that there is no difference in the mean rating between the categories tested. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in mean rating per category of application. (See mathematical representation of these hypotheses below).
+My null hypothesis is that there is no difference in the ratings' median between the categories tested. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in ratings' median per category of application. (See mathematical representation of these hypotheses below).
 
-$$ H_0: \ GAME_{Rating} \mu  =  VIDEOPLAYERS_{Rating} \mu = COMMUNICATION_{Rating} \mu = PHOTOGRAPHY_{Rating} \mu = SOCIAL_{Rating} \mu = TOOLS_{Rating}\mu $$
-$$ H_a: \ GAME_{Rating} \mu  \neq  VIDEOPLAYERS_{Rating} \mu \neq COMMUNICATION_{Rating} \mu \neq PHOTOGRAPHY_{Rating} \mu \neq SOCIAL_{Rating} \mu \neq TOOLS_{Rating}\mu $$
+$$ H_0: \ GAME_{Rating} \tilde x  =  VIDEOPLAYERS_{Rating} \tilde x = COMMUNICATION_{Rating} \tilde x = PHOTOGRAPHY_{Rating} \tilde x = SOCIAL_{Rating} \tilde x = TOOLS_{Rating} \tilde x $$
+$$ H_a: \ GAME_{Rating} \tilde x  \neq  VIDEOPLAYERS_{Rating} \tilde x \neq COMMUNICATION_{Rating} \tilde x \neq PHOTOGRAPHY_{Rating} \tilde x \neq SOCIAL_{Rating} \tilde x \neq TOOLS_{Rating}\tilde x $$
 
 ### Kruskal-Wallis H-Test Categories
 To calculate the p-value for my hypothesis testing, I used the [Kruskal-Wallis H Test](#https://en.wikipedia.org/wiki/Kruskal%E2%80%93Wallis_one-way_analysis_of_variance), or one-way ANOVA on ranks. This test specifically for nonparametric data that analyzes whether samples originate from the sample distribution, which means it tests to see if there's a difference in means. As we saw in the hypothesis testing above, our data, which we thought was normally distributed, ended up being nonparametric. To combat this issue, I used H-Test. 
