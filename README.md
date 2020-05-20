@@ -1,5 +1,5 @@
 <p align='center'>
-<img src="images/google-play-logo1.jpg" width="400" height="300"> 
+<img src="images/google_play_button.png" width="400" height="300"> 
 </p>
 
 # What Makes an Application Successful
@@ -41,13 +41,17 @@ Google Play, formerly known as the Android Market, is the official app store for
 
 <a href="#Table-of-Contents">Back to top</a>
 
+<p align='center'>
+<img src="images/sw-development-teams.png" width="400" height="300"> 
+</p>
+
 ### Motivation
 ---
 While I was a student in high school, I found my self often wondering if I, along with my friends, could create an app that would be successful. I often pondered about what goes into a "successful" app. Is it the number of installs the application gets? Is it the rating it receives? Or is it the contents of the app? Asking myself these questions, presents a problem in app development, in that there are many factors that go into making an app "successful", thus trying to predict the application market is difficult. 
 
-In fact, many technology-forward companies today are driven by this market and often dedicate teams to providing insight into how to make their applications successful and what type of behavior these successful applications exhibit. In this project, I am attempting to quantify the relationship between multiple application factors that can often be measured in terms of success, rating, reviews, and number of installs. 
+In fact, many technology-forward companies today are driven by this market and often dedicate teams to providing insight into how to make their applications successful and what type of behavior these successful applications exhibit. In this project, I am attempting to quantify the relationship between multiple application factors that can often be measured in terms of success: rating, reviews, and number of installs (downloads). 
 
-<<a href="#Table-of-Contents">Back to top</a>
+<a href="#Table-of-Contents">Back to top</a>
 
 ## Data
 
@@ -183,8 +187,9 @@ In order for my to run a hypothesis test on the impact the level of installs an 
 
 My null hypothesis states that there is no difference in the ratings' median between a higher level of installs and a lower level of installs. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in the ratings' median per level of installs. (See mathematical representation of these hypotheses below).
 
-$$ H_0: \ Rating_{HighInstalls} \tilde x  =  Rating_{LowInstalls}\tilde x $$
-$$ H_a: \ Rating_{HighInstalls} \tilde x  \neq  Rating_{LowInstalls}\tilde x $$
+<p align='center'>
+<img src="images/Capstone I - Hypothesis Testing 1.png" width="350" height="420"> 
+</p>
 
 ### Kruskal-Wallis H-Test
 ---
@@ -252,8 +257,10 @@ For my second hypothesis testing, since we are studying the success factors of a
 
 My null hypothesis is that there is no difference in the ratings' median between the categories tested. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in ratings' median per category of application. (See mathematical representation of these hypotheses below).
 
-$$ H_0: \ GAME_{Rating} \tilde x  =  VIDEOPLAYERS_{Rating} \tilde x = COMMUNICATION_{Rating} \tilde x = PHOTOGRAPHY_{Rating} \tilde x = SOCIAL_{Rating} \tilde x = TOOLS_{Rating} \tilde x $$
-$$ H_a: \ GAME_{Rating} \tilde x  \neq  VIDEOPLAYERS_{Rating} \tilde x \neq COMMUNICATION_{Rating} \tilde x \neq PHOTOGRAPHY_{Rating} \tilde x \neq SOCIAL_{Rating} \tilde x \neq TOOLS_{Rating}\tilde x $$
+<p align='center'>
+<img src="images/Capstone I - Hypothesis Testing 2.png" width="900" height="600"> 
+</p>
+
 
 ### Kruskal-Wallis H-Test Categories
 To calculate the p-value for my hypothesis testing, I used the [Kruskal-Wallis H Test](#https://en.wikipedia.org/wiki/Kruskal%E2%80%93Wallis_one-way_analysis_of_variance), or one-way ANOVA on ranks. This test specifically for nonparametric data that analyzes whether samples originate from the sample distribution, which means it tests to see if there's a difference in means. As we saw in the hypothesis testing above, our data, which we thought was normally distributed, ended up being nonparametric. To combat this issue, I used H-Test. 
