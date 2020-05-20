@@ -1,5 +1,5 @@
 <p align='center'>
-<img src="images/google_play_button.png" width="400" height="300"> 
+<img src="images/google_play_button.png" width="500" height="300"> 
 </p>
 
 # What Makes an Application Successful
@@ -188,7 +188,7 @@ In order for my to run a hypothesis test on the impact the level of installs an 
 My null hypothesis states that there is no difference in the ratings' median between a higher level of installs and a lower level of installs. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in the ratings' median per level of installs. (See mathematical representation of these hypotheses below).
 
 <p align='center'>
-<img src="images/Capstone I - Hypothesis Testing 1.png" width="350" height="420"> 
+<img src="images/Capstone I - Hypothesis Testing 1.png" width="500" height="100"> 
 </p>
 
 ### Kruskal-Wallis H-Test
@@ -258,7 +258,7 @@ For my second hypothesis testing, since we are studying the success factors of a
 My null hypothesis is that there is no difference in the ratings' median between the categories tested. Thus, my alternative hypothesis states the opposite, in that there *is* a difference in ratings' median per category of application. (See mathematical representation of these hypotheses below).
 
 <p align='center'>
-<img src="images/Capstone I - Hypothesis Testing 2.png" width="900" height="600"> 
+<img src="images/Capstone I - Hypothesis Testing 2.png" width="700" height="50"> 
 </p>
 
 
