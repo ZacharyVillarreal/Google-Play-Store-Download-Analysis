@@ -148,10 +148,10 @@ This is interesting. We can see that in the Installs vs Reviews plot, both of th
 **Null Hypothesis: Installs and Reviews are *dependent*.**<br>
 **Alternate Hypothesis: Installs and Reviews are *independent*.**<br>
 
-`pvalue, dof, cont = scipy.stats.chi2_contingency(reviews_vs_installs)`<br>
-`pvalue = 0.9991`
 
-Thus, we can say that we **failed to disprove** the null hypothesis, and that Installs and Reviews are in fact, *dependent*. It is no secret that the number of reviews and number of installs are codependent. Meaning, that as the application receives more installs the number of reviews increases as well. 
+However, one of the assumptions of the Chi-squared test is that the observations being tested must be independent of all others. This is not the case when it comes to testing the relationship between Installs and Reviews as seen above.
+
+Thus, we cannot say that we **failed to disprove** nor that we **accepted** the null hypothesis. It is no secret that the number of reviews and number of installs are codependent. Meaning, that as the application receives more installs the number of reviews increases as well. 
 
 Therefore, we could say that, if we want to have a successful application, besides creating an application that is rated For Everyone and is under the GAME category, is to make sure our application is being reviewed by more people, which could in turn increase our capture in the market. 
 
